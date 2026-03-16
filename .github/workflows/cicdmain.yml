@@ -6,7 +6,6 @@ on:
       - main
 
 jobs:
-
   compile:
     runs-on: self-hosted
 
