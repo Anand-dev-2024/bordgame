@@ -20,7 +20,11 @@ jobs:
 
       - name: Build with Maven
         run: mvn clean package
-
+      - name: Upload JAR artifact   # ✅ MOVE HERE
+        uses: actions/upload-artifact@v4
+        with:
+          name: app-jar
+          path: target/*.jar
 
   security-check:
     runs-on: self-hosted
@@ -70,12 +74,6 @@ jobs:
     needs: test
 
     steps:
-      - name: Upload JAR artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: app-jar
-          path: target/*.jar
-
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
