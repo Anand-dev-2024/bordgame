@@ -125,7 +125,7 @@ jobs:
           push: true
           tags: anandbabumada/themainbgone:latest
 
-    Deploy in k8s:
+    Deploy-k8s:
        runs-on: self-hosted
        needs: docker-build-push
 
